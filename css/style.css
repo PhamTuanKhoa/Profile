@@ -9982,3 +9982,38 @@ h6,
   padding: 0;
   list-style-type: none;
 }
+
+.direct-button{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  border-radius: 50px;
+  border: 5px solid;
+  border-color: #ffffff;
+}
+
+.about-me {
+  position: relative;
+  width: fit-content;
+  margin-top: 10px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 30px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.direct-button:hover {
+  background-color: #ffffff;
+  text-decoration: none;
+  .about-me {
+    color: #09CEAF;
+  }
+}
