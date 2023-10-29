@@ -10016,4 +10016,7 @@ h6,
   .about-me {
     color: #09CEAF;
   }
+
+.direct-index:hover {
+  cursor: pointer;
 }
