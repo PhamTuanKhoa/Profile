@@ -10019,4 +10019,5 @@ h6,
 
 .direct-index:hover {
   cursor: pointer;
+  text-decoration: none;
 }
