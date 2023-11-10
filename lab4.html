@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercises</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body onload="renderListClassrooms()">
+    <!-- Navbar Start -->
+    <div class="container-fluid py-5" id="lab">
+        <div class="container">
+            <div class="row align-items-center">
+                <a href="about.html" class="navbar-brand ml-lg-3">
+                    <h1 class="m-0 display-5"><span class="text-primary">Personal</span>Profile</h1>
+                </a>
+                <ul>
+                    <li><a href="./lab4.html">Lab 4</a></li>
+                    <!-- <li><a href="#news">News</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about">About</a></li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Tab Start -->
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Requirement')" id="defaultOpen">Requirement</button>
+        <button class="tablinks" onclick="openTab(event, 'Design')">Design</button>
+        <button class="tablinks" onclick="openTab(event, 'Implement')">Implement</button>
+    </div>
+    <!-- Tab End -->
+    
+     <!-- Content Container -->
+     <div class="tab-container">
+        <!-- Requirement Tab Content -->
+        <div id="Requirement" class="tabcontent">
+            <h3>Yêu cầu:</h3>
+            <p>Chọn 1 đối tượng bất kỳ trong thế giới thực, ví dụ như <b>lớp môn học, giảng viên,…</b> Sau đó thiết kế chức năng Quản lý đối tượng đó trên html bao gồm các tính năng <b>thêm, sửa, xóa, tìm kiếm</b> cho đối tượng đó. Ví dụ, làm chức năng <b>Quản lý Sinh viên</b>, bao gôm tính năng <b>thêm, sửa, xóa, tìm kiếm</b>. </p>
+        </div>
+
+        <!-- Design Tab Content -->
+        <div id="Design" class="tabcontent">
+            <h3>Designs</h3>
+            <a class="download-button" href="#" download="paperdesign">
+                <img class="download-icon" src="icons/download-to-storage-drive.svg">
+                Download
+            </a>
+        </div>
+
+        <!-- Implement Tab Content -->
+        <div id="Implement" class="tabcontent">
+            <div class="classroom-validate-form">
+                <h3>Thông tin phòng học</h3>
+                <label>Phòng</label>
+                <input style="text-transform: uppercase;" type="text" id="room">
+                <span id="room-error" class="error"></span>
+                <br/>
+    
+                <label>Giảng đường</label>
+                <input style="text-transform: capitalize;" type="text" id="auditorium">
+                <span id="auditorium-error" class="error"></span>
+                <br/>
+    
+                <label>Số chỗ ngồi</label>
+                <input type="text" id="seats">
+                <span id="seats-error" class="error"></span>
+                <br/>
+    
+                <label>Máy chiếu</label>
+                <input type="radio" name="projector" id="available-projector" value="Có">Có
+                <input type="radio" name="projector" id="unavailable-projector" value="Không">Không
+                <span id="projector-error" class="error"></span>
+                <br/>
+    
+                <label>Tình trạng</label>
+                <input type="radio" name="status" id="available-room" value="Rảnh">Rảnh
+                <input type="radio" name="status" id="unavailable-room" value="Bận">Bận
+                <input type="radio" name="status" id="waiting-room" value="Chờ xếp lịch">Chờ xếp lịch
+                <span id="status-error" class="error"></span>
+                <br/>
+    
+                <label>&nbsp;</label>
+                <button id="save-button" onclick="save()" class="submit-button">Lưu</button>
+            </div>
+            <h3>Quản lý phòng học</h3>
+            <div id="classroom-list">
+                <table id="grid-classrooms" width="600" border="2" cellpadding="0" cellpadding="0">
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5">
+        <div class="container text-center py-5">
+            <div class="d-flex justify-content-center mb-4">
+                <a class="btn btn-light btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-light btn-social mr-2" href="https://www.facebook.com/profile.php?id=100053285045795"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-light btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="d-flex justify-content-center mb-3">
+                <a class="text-white" href="#">Privacy</a>
+                <span class="px-3">|</span>
+                <a class="text-white" href="#">Terms</a>
+                <span class="px-3">|</span>
+                <a class="text-white" href="#">FAQs</a>
+                <span class="px-3">|</span>
+                <a class="text-white" href="#">Help</a>
+            </div>
+            <p class="m-0">&copy;All Rights Reserved. Designed by <a class="text-white font-weight-bold" href="https://htmlcodex.com">HTML Codex</a>
+            </p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-outline-dark px-0 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/typed/typed.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+        function openTab(evt, tabName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(tabName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+
+        document.getElementById("defaultOpen").click();
+
+        function openNewWindow() {
+            var screenWidth = window.innerWidth;
+            var screenHeight = window.innerHeight;
+            var windowWidth = 900;
+            var windowHeight = 300;
+            var left = (screenWidth - windowWidth) / 2;
+            var top = (screenHeight - windowHeight) / 2;
+            var features = "width=" + windowWidth + ",height=" + windowHeight + ",top=" + top + ",left=" + left;
+
+            window.open("./validate-form.html", "_blank", features);
+        }
+
+        function deleteRow() {
+            var table = document.getElementById("myTable");
+            var rowCount = table.rows.length;
+
+            if(rowCount > 0) { 
+                table.deleteRow(rowCount - 1);
+            } else {
+                console.log("No rows to delete");
+            }
+        }
+    </script>  
+
+    <script src="./js/classroom.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
+
+</body>
+
+</html>
