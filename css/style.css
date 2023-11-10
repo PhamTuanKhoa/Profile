@@ -10085,15 +10085,12 @@ li .active {
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
+  flex: 1;
 }
 
 .tab-container {
   clear: both;
   display: flex;
-}
-
-.tabcontent {
-  flex: 1;
 }
 
 /* Media query for responsiveness */
@@ -10107,13 +10104,41 @@ li .active {
   }
 }
 
-.download-button {
+.design-container {
+  display: flex; /* Use flexbox for the design container */
+}
+
+.paper-design-container,
+.figma-design-container {
+  flex: 1; /* Distribute available space evenly between the two containers */
+  margin-right: 10px; /* Add margin for some spacing between the containers */
+}
+
+.paper-design-container img,
+.figma-design-container img {
+  max-width: 100%; /* Make sure images don't exceed their container's width */
+  height: auto; /* Maintain image aspect ratio */
+}
+
+.download-button, .redirect-button {
   background-color: #09CEAF;
   border-radius: 30px;
+  width: 150px;
   color: white;
   padding: 12px 30px;
   cursor: pointer;
   font-size: 20px;
+  display: block;
+  margin-top: 10px;
+  align: center;
+}
+
+.figma-button {
+  display: flex;
+}
+
+.figma-button a {
+  margin-left: 10px;
 }
 
 .download-icon {
@@ -10123,7 +10148,7 @@ li .active {
 }
 
 /* Darker background on mouse-over */
-.download-button:hover {
+.download-button:hover, .redirect-button:hover {
   background-color:#089e86;
   color: white;
   text-decoration: none;
@@ -10216,4 +10241,12 @@ td {
 
 #delete-button:hover, #edit-button:hover {
   text-decoration: underline;
+}
+
+#search-bar {
+  width: 300px; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 3px 20px 3px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
 }

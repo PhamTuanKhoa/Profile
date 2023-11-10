@@ -64,10 +64,25 @@
         <!-- Design Tab Content -->
         <div id="Design" class="tabcontent">
             <h3>Designs</h3>
-            <a class="download-button" href="#" download="paperdesign">
-                <img class="download-icon" src="icons/download-to-storage-drive.svg">
-                Download
-            </a>
+            <div class="design-container">
+                <div class="paper-design-container">
+                    <img src="img/paper-design.jpg" style="width: 500px; height: 800px;">
+                    <a class="download-button" href="img/paper-design.jpg" download="paperdesign">
+                        Download
+                    </a>
+                </div>
+                <div class="figma-design-container">
+                    <img src="img/figma-design.jpg" style="width: 1200px; height: 800px;">
+                    <div class="figma-button">
+                        <a class="download-button" href="img/paper-design.jpg" download="paperdesign">
+                            Download
+                        </a>
+                        <a class="redirect-button" href="https://www.figma.com/file/MRxx2ii2fB4PC7GRcKSdg7/Lab4?type=design&node-id=0%3A1&mode=design&t=cMQmfrVKOJTmbTzI-1">
+                            To Figma
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Implement Tab Content -->
@@ -106,6 +121,9 @@
                 <button id="save-button" onclick="save()" class="submit-button">Lưu</button>
             </div>
             <h3>Quản lý phòng học</h3>
+
+            <input type="text" id="search-bar" oninput="search()" placeholder="Tìm kiếm">
+
             <div id="classroom-list">
                 <table id="grid-classrooms" width="600" border="2" cellpadding="0" cellpadding="0">
                     

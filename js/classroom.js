@@ -59,27 +59,66 @@
         }
     }
 
-    function renderListClassrooms() {
-        let classrooms = localStorage.getItem('classrooms') ? JSON.parse(localStorage.getItem('classrooms')) : [];
+    // function renderListClassrooms() {
+    //     let classrooms = localStorage.getItem('classrooms') ? JSON.parse(localStorage.getItem('classrooms')) : [];
 
-        if(classrooms.length === 0) {
-            document.getElementById('classroom-list').style.display = "none";  
-            return  false;
+    //     if(classrooms.length === 0) {
+    //         document.getElementById('classroom-list').style.display = "none";  
+    //         return  false;
+    //     }
+
+    //     document.getElementById('classroom-list').style.display = "block";
+
+    //     let tableContent = `<tr>
+    //             <td>STT</td>
+    //             <td>Phòng</td>
+    //             <td>Giảng đường</td>
+    //             <td>Số chỗ ngồi</td>
+    //             <td>Máy chiếu</td>
+    //             <td>Tình trạng</td>
+    //             <td>Thao tác</td>
+    //         </tr>`;
+        
+    //     classrooms.forEach((classroom, index) => {
+    //         let classroomID = index;
+    //         index++;
+    //         tableContent += `<tr>
+    //             <td>${index}</td>
+    //             <td>${classroom.room}</td>
+    //             <td>${classroom.auditorium}</td>
+    //             <td>${classroom.seats}</td>
+    //             <td>${classroom.projector}</td>
+    //             <td>${classroom.status}</td>
+    //             <td>
+    //                  <button id="edit-button" onclick='editClassroom(${classroomID})' type="button">Edit</button> | <button id="delete-button" onclick='deleteClassroom(${classroomID})' type="button">Delete</button>
+    //             </td>
+    //         </tr>`;
+    //      })
+
+    //     document.getElementById('grid-classrooms').innerHTML = tableContent;
+    // }
+
+    function renderListClassrooms(classrooms = null) {
+        let classroomsToRender = classrooms || JSON.parse(localStorage.getItem('classrooms')) || [];
+
+        if (classroomsToRender.length === 0) {
+            document.getElementById('classroom-list').style.display = "none";
+            return false;
         }
 
         document.getElementById('classroom-list').style.display = "block";
 
         let tableContent = `<tr>
-                <td>STT</td>
-                <td>Phòng</td>
-                <td>Giảng đường</td>
-                <td>Số chỗ ngồi</td>
-                <td>Máy chiếu</td>
-                <td>Tình trạng</td>
-                <td>Thao tác</td>
-            </tr>`;
+            <td>STT</td>
+            <td>Phòng</td>
+            <td>Giảng đường</td>
+            <td>Số chỗ ngồi</td>
+            <td>Máy chiếu</td>
+            <td>Tình trạng</td>
+            <td>Thao tác</td>
+        </tr>`;
 
-        classrooms.forEach((classroom, index) => {
+        classroomsToRender.forEach((classroom, index) => {
             let classroomID = index;
             index++;
             tableContent += `<tr>
@@ -90,10 +129,11 @@
                 <td>${classroom.projector}</td>
                 <td>${classroom.status}</td>
                 <td>
-                     <button id="edit-button" onclick='editClassroom(${classroomID})' type="button">Edit</button> | <button id="delete-button" onclick='deleteClassroom(${classroomID})' type="button">Delete</button>
+                    <button id="edit-button" onclick='editClassroom(${classroomID})' type="button">Edit</button> | 
+                    <button id="delete-button" onclick='deleteClassroom(${classroomID})' type="button">Delete</button>
                 </td>
             </tr>`;
-         })
+        });
 
         document.getElementById('grid-classrooms').innerHTML = tableContent;
     }
@@ -138,5 +178,21 @@
     
         // Store the classroomID to use it when saving the edited data
         document.getElementById('save-button').setAttribute('data-classroom-id', classroomID);
+    }
+
+    function search() {
+        let searchInput = document.getElementById('search-bar').value.toLowerCase();
+        let classrooms = JSON.parse(localStorage.getItem('classrooms')) || [];
+        let filteredClassrooms = classrooms.filter(classroom => {
+            return (
+                classroom.room.toLowerCase().includes(searchInput) ||
+                classroom.auditorium.toLowerCase().includes(searchInput) ||
+                classroom.seats.toLowerCase().includes(searchInput) ||
+                classroom.projector.toLowerCase().includes(searchInput) ||
+                classroom.status.toLowerCase().includes(searchInput)
+            );
+        });
+
+        renderListClassrooms(filteredClassrooms);
     }
 
