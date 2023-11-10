@@ -10016,10 +10016,204 @@ h6,
   .about-me {
     color: #09CEAF;
   }
+}
 
-.direct-index:hover {
+ul {
+  height: 50%;
+  width: 100%;
+  font-size: 25px;
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+  background-color:white;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); 
+}
+
+li {
+  display: inline;
+  float: none;
+  font-weight:400;
+}
+
+li a {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  color:#09CEAF;
+  text-decoration: none;
+}
+
+li .active {
+  color:#09CEAF;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  display: inline-block;
+  border: none;
+  outline: none;
   cursor: pointer;
-  .direct-index h1 {
-    text-decoration: none;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  align-items: center;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #09CEAF;
+  color: white;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #09CEAF;
+  color: white;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.tab-container {
+  clear: both;
+  display: flex;
+}
+
+.tabcontent {
+  flex: 1;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
   }
+
+  .tab {
+      justify-content: center;
+  }
+}
+
+.download-button {
+  background-color: #09CEAF;
+  border-radius: 30px;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.download-icon {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(246deg) brightness(111%) contrast(101%);
+  height: 20px;
+  width: 20px;
+}
+
+/* Darker background on mouse-over */
+.download-button:hover {
+  background-color:#089e86;
+  color: white;
+  text-decoration: none;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #FFFFFF;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.classroom-list {
+  width:600px;
+  border: 1px solid #ccc;
+  margin: 25px;
+  padding: 10px;
+}
+
+table {
+  margin: left;
+}
+
+td {
+  text-align: center;
+  text-transform: capitalize;
+  overflow-x: auto;
+}
+
+.classroom-validate-form {
+  height: 300px;
+  width: 900px;
+  border: 1px solid #ccc;
+  margin: 25px;
+  padding: 10px;
+}
+
+.classroom-validate-form label {
+  width: 150px;
+}
+
+.classroom-validate-form input[type="text"], .submit-button {
+  width: 200px;
+  padding: 2px;
+}
+
+.classroom-validate-form input[type="radio"] {
+  margin-left: 10px;
+}
+
+#room-error, #auditorium-error, #seats-error {
+  color: red;
+  margin-left: 40px;
+}
+
+#projector-error {
+  color: red;
+  margin-left: 123px;;
+}
+
+#status-error {
+  color: red;
+  margin-left: 6px;
+}
+
+#delete-button, #edit-button {
+  border: none;
+  background: none;
+  color: #09CEAF;
+}
+
+#delete-button:hover, #edit-button:hover {
+  text-decoration: underline;
 }
