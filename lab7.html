@@ -24,7 +24,12 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/stylel5.css" rel="stylesheet">
 </head>
+
+<style>
+    
+</style>
 
 <body onload="renderListClassrooms()">
     <!-- Navbar Start -->
@@ -58,7 +63,9 @@
         <!-- Requirement Tab Content -->
         <div id="Requirement" class="tabcontent">
             <h3>Yêu cầu:</h3>
-            <p>Chọn 1 đối tượng bất kỳ trong thế giới thực, ví dụ như <b>lớp môn học, giảng viên,…</b> Sau đó thiết kế chức năng Quản lý đối tượng đó trên html bao gồm các tính năng <b>thêm, sửa, xóa, tìm kiếm</b> cho đối tượng đó. Ví dụ, làm chức năng <b>Quản lý Sinh viên</b>, bao gôm tính năng <b>thêm, sửa, xóa, tìm kiếm</b>. </p>
+            <p>(1) Tạo một trang Web có nội dung bất kỳ, sử dụng linh hoạt tất cả những phần sau: Input Controls, Navigation, Animations, Default Settings, Guided Actions</p>
+            <p>(2) Có biểu mẫu liên hệ</p>
+            <p>(3) Upload lên github</p>
         </div>
 
         <!-- Design Tab Content -->
@@ -66,15 +73,15 @@
             <h3>Designs</h3>
             <div class="design-container">
                 <div class="paper-design-container">
-                    <img src="img/paper-design.jpg" style="width: 500px; height: 800px;">
-                    <a class="download-button" href="img/paper-design.jpg" download="paperdesign">
+                    <img src="img/user-scenario.png" style="width: 700px; height: 800px;">
+                    <a class="download-button" href="img/user-scenario.png" download="scenario">
                         Download
                     </a>
                 </div>
                 <div class="figma-design-container">
-                    <img src="img/figma-design.jpg" style="width: 1200px; height: 800px;">
+                    <img src="img/figma-design(l5).png" style="width: 1200px; height: 800px;">
                     <div class="figma-button">
-                        <a class="download-button" href="img/figma-design.jpg" download="figmadesign">
+                        <a class="download-button" href="img/figma-design(l5).png" download="figmadesign">
                             Download
                         </a>
                         <a class="redirect-button" href="https://www.figma.com/file/MRxx2ii2fB4PC7GRcKSdg7/Lab4?type=design&node-id=0%3A1&mode=design&t=cMQmfrVKOJTmbTzI-1">
@@ -87,48 +94,66 @@
 
         <!-- Implement Tab Content -->
         <div id="Implement" class="tabcontent">
-            <div class="classroom-validate-form">
-                <h3>Thông tin phòng học</h3>
-                <label>Phòng</label>
-                <input style="text-transform: uppercase;" type="text" id="room">
-                <span id="room-error" class="error"></span>
-                <br/>
-    
-                <label>Giảng đường</label>
-                <input style="text-transform: capitalize;" type="text" id="auditorium">
-                <span id="auditorium-error" class="error"></span>
-                <br/>
-    
-                <label>Số chỗ ngồi</label>
-                <input type="text" id="seats">
-                <span id="seats-error" class="error"></span>
-                <br/>
-    
-                <label>Máy chiếu</label>
-                <input type="radio" name="projector" id="available-projector" value="Có">Có
-                <input type="radio" name="projector" id="unavailable-projector" value="Không">Không
-                <span id="projector-error" class="error"></span>
-                <br/>
-    
-                <label>Tình trạng</label>
-                <input type="radio" name="status" id="available-room" value="Rảnh">Rảnh
-                <input type="radio" name="status" id="unavailable-room" value="Bận">Bận
-                <input type="radio" name="status" id="waiting-room" value="Chờ xếp lịch">Chờ xếp lịch
-                <span id="status-error" class="error"></span>
-                <br/>
-    
-                <label>&nbsp;</label>
-                <button id="save-button" onclick="save()" class="submit-button">Lưu</button>
-            </div>
-            <h3>Quản lý phòng học</h3>
-
-            <input type="text" id="search-bar" oninput="search()" placeholder="Tìm kiếm">
-
-            <div id="classroom-list">
-                <table id="grid-classrooms" width="600" border="2" cellpadding="0" cellpadding="0">
-                    
-                </table>
-            </div>
+            
+            <header>
+                <h1>Bus Ticket Booking Website</h1>
+            </header>
+            
+              <main>
+                <div class="search-bar">
+                  <input list="cities" placeholder="Điểm đi">
+                  <datalist id="cities">
+                    <option value="Hồ Chí Minh">
+                    <option value="Hà Nội">
+                    <option value="Nha Trang">
+                    <option value="Vũng Tàu">
+                    <option value="Đà Nẵng">
+                    <option value="Bạc Liêu">
+                  </datalist>
+                  <input list="cities" placeholder="Điểm đến">
+                  <datalist id="cities">
+                    <option value="Hồ Chí Minh">
+                    <option value="Hà Nội">
+                    <option value="Nha Trang">
+                    <option value="Vũng Tàu">
+                    <option value="Đà Nẵng">
+                    <option value="Bạc Liêu">
+                  </datalist>
+                  <input placeholder="Chọn ngày khởi hành" class="textbox-n" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"/>
+                  <input type="number" placeholder="Nhập số lượng vé">
+                  <button class="booking-button" type="submit">Tìm chuyến xe</button>
+                </div>
+            
+                <div class="results">
+                  <h2>Kết quả tìm kiếm</h2>
+                  <div class="result">
+                    <img class="bus-image" src="./img/mailinh-bus.jpg" alt="Bus image">
+                    <div class="details">
+                      <h3>Nhà xe Mai Linh</h3>
+                      <p>Khởi hành lúc: 8:00 sáng</p>
+                      <p>Thời gian di chuyển: 6 tiếng</p>
+                      <p>Giá vé: 200.000đ</p>
+                      <button class="booking-button" type="button">Đặt vé</button>
+                    </div>
+                  </div>
+                  <div class="result">
+                    <img class="bus-image" src="./img/phuongtrang-bus.jpg" alt="Bus image">
+                    <div class="details">
+                      <h3>Nhà xe Phương Trang</h3>
+                      <p>Khởi hành lúc: 9:00 sáng</p>
+                      <p>Thời gian di chuyển: 5 tiếng 30 phút</p>
+                      <p>Giá vé: 220.000đ</p>
+                      <button class="booking-button" type="button">Đặt vé</button>
+                    </div>
+                  </div>
+                </div>
+            
+              </main>
+            
+              <footer>
+                <p>Copyright © 2023 Bus Ticket Booking Website</p>
+              </footer>
+            
         </div>
     </div>
 
