@@ -17,6 +17,7 @@
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Libraries Stylesheet -->
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -28,7 +29,444 @@
 </head>
 
 <style>
-    
+        * {
+    box-sizing: border-box;
+    }
+
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    background: #f1f1f1;
+    margin: 0 auto;
+    width: 1340px;
+    }
+
+    .banner img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: auto;
+    }
+
+    .banner{
+      background-color: #ffe300;
+    }
+
+    .header {
+    background: black;
+    height: 100px;
+    }
+
+    .topnav {
+    overflow: hidden;
+    background-color: yellow;
+    }
+
+    .topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+    /* Change color on hover */
+    .topnav a:hover {
+    background-color: white;
+    color: black;
+    }
+
+    /* Create two unequal columns that floats next to each other */
+    /* Left column */
+    .leftcolumn {   
+    float: left;
+    width: 75%;
+    }
+
+    /* Right column */
+    .rightcolumn {
+    float: left;
+    width: 25%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+    }
+
+    /* Fake image */
+    .fakeimg {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    margin-top: 20px;
+    }
+
+    /* Add a card effect for articles */
+    .card {
+    background-color: white;
+    margin-top: 20px;
+    box-shadow: 0 0em 0.5em rgb(15 15 15 / 25%);
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+    /* Footer */
+    .footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+    height: 400px;
+    }
+
+    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+    }
+    }
+
+    /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+    @media screen and (max-width: 400px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+    }
+    a{
+      text-decoration: none;
+    }
+
+    .search-box{
+    margin-top: 25px;
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    margin-left: 150px;
+    }
+    .search-input{
+      height: 30px;
+      width: 500px;
+      padding: 10px;
+      border: 2px solid YELLOW;
+      outline: none;
+      font-size: 20px;
+      color: black;
+    }
+    .search-button{
+      background-color: YELLOW;
+      text-align: center;
+      height: 30px;
+      width: 50px;
+      outline: none;
+      cursor: pointer;
+      border: 2px solid YELLOW;
+      font-size: 20px;
+      border-left: 2px solid YELLOW;
+    }
+
+    .header-sub{
+        display: flex;
+        margin-left: 1%;
+    }
+
+    .tag{
+        display: flex;
+    }
+
+    .tag p{
+        padding-left: 25px;
+        font-size: 12px;
+    }
+
+    .tag-popular a{
+        color: yellow;
+        font-weight: bold;
+    }
+    .tag-list a{
+        color: white;
+        text-decoration: none;
+    }
+    #img{
+        width: 130%;
+        margin: 0 auto;
+        height: 400px;
+    }
+    .item{
+        width: 30%;
+        height: 100%;
+        border: 1px solid black;
+        margin: 1%;
+        display: flex;
+        flex-wrap: wrap;
+        object-fit: cover;
+        text-align: center;
+    }
+    .item img{
+        width: 100%;
+        height: auto;
+    }
+    .tieude{
+        text-align: center;
+        font-size: 35px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        color: pink;
+    }
+    .gia{
+        line-height: 18px;
+        padding: 30px;
+    }
+    .footer-column{
+        width: 20%;
+        height: auto;
+        display: inline-block;
+        margin: 1%;
+        line-height: 30px;
+    }
+    .km{
+        font-size: 12px;
+
+    }
+    .gt{
+        font-weight: bold;
+        color: orangered;
+    }
+    i{margin: 3px;}
+    .footer-column a{
+        text-decoration: none;
+        font-size: 12px;
+        color: black;
+    }
+    .footer-column .bank{
+        object-fit: cover;
+        width: auto;
+        height: 140px;
+        margin: 1%;
+    }
+
+
+    .account{
+      float: right;
+    }
+
+    .cate-item{
+      list-style: none;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-left: 20px;
+      margin-left: -40px;
+    }
+
+    .cate-item a{
+      color: black;
+      font-weight: bolder;
+    }
+
+    .cate-item:hover{
+      color: black;
+      background-color: white;
+      cursor: pointer;
+    }
+
+    .title-cate{
+      background-color: yellow;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      border-radius: 1px; 
+    }
+    .popular-item{
+      text-align: justify;
+      display: flex;
+      text-indent: 30px;
+      margin-top: 30px;
+      font-size: 12px;
+      margin-left: 10px;
+      margin-right: 25px;
+      padding-bottom: 30px;
+    }
+    .banner-mid{
+      margin-top: 20px;
+    }
+    .banner-mid img{
+      width: 100%;
+      object-fit: cover;
+      border: 1px solid#ffbf00;
+    }
+
+    .product{
+      background-color: #ffbf00;
+      padding: 12px;
+    }
+    .product-item-banner img{
+      width: 100%;
+    }
+    .product-content-items{
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .product-content-item:hover img{
+       transform: translateY(-20px);
+       
+    }
+    .product-content-item{
+      width: 19%;
+      background-color: #fdfeff;
+      padding: 50px 12px 50px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .product-content-item:hover{
+      box-shadow: 0 0em 0.5em rgb(15 15 15 / 25%);
+    }
+    .product-content-item > img{
+      width: 100%;
+      transition: all 0.5s ease;
+    }
+    .product-title {
+      font-style: italic;
+    }
+    .product-content-item-text{
+      padding-top: 20px;
+    }
+    .product-content-item-text li{
+      list-style: none;
+      margin-bottom: 6px;
+    }
+    .product-content-item-text li:first-child{
+      height: 30px;
+      width: 70%;
+      background-color: #976666;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 12px;
+      color: #fff;
+      align-items: center;
+      line-height: 30px;
+      border-radius: 5px;
+    }
+    .product-content-item-text li:nth-child(2):hover{
+      color: #01bacf;
+    }
+    .product-content-item-text li:nth-child(3){
+      font-size: 12px;
+    }
+    .product-content-item-text li:nth-child(4) a{
+      text-decoration: line-through;
+      color: black;
+      font-size: 12px;
+    }
+    .product-content-item-text li:nth-child(5){
+      font-weight: bold;
+    }
+    .product-content-item-text:last-child i{
+      color: #ffe300;
+    }
+
+    .product-mobile{
+      padding-top: 1px;
+      padding-left: 10px;
+    }
+    .product-mobile-items{
+      display: flex;
+      justify-content: space-evenly;
+      padding-bottom: 20px;
+    }
+    .mobile{
+      box-shadow: 0 0em 0.5em rgb(15 15 15 / 25%);
+    }
+    .product-item-mobile{
+      padding-bottom: 20px;
+    }
+    .sticky {
+      position: fixed;
+      top: 0;
+      margin-top: -20px;
+      width: 315px;
+    }
+    .price-right{
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .popular-right{
+      font-size: 20px;
+      font-weight: 500;
+    }
+    .order-now{
+      border: none;
+      height: 30px;
+      float: right;
+      margin-top: 10px;
+      border-radius: 2px;
+    }
+
+    .order-now:hover{
+      cursor: pointer;
+    }
+
+    .left-star{
+      margin-right: -30px;
+    }
+    .item-left-conten{
+      color: yellow;
+      margin-top: 16px;
+      display: flex;
+    }
+    .star-order{
+      width: 100%;
+    }
+    .email-km{
+      margin-top: 10px;
+      font-size: 20px;
+      height: 40px;
+      width: 100%;
+      border: none;
+      border-radius: 2px;
+    }
+    .btn-km{
+      background-color: red;
+      border: none;
+      width: 100%;
+      height: 40px;
+      color: white;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    .btn-km:hover{
+      cursor: pointer;
+    }
+    .page-activate{
+      background-color: white;
+    }
+
+    .tintuc-column-index {
+      height: 100%;
+    }
+    .tintuc-column2-item {
+      padding-top: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: 20px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid gray;
+    }
+
+    .tintuc-column2-item a{
+      color: black;
+    }
+
+    .tintuc-column2-item a:hover{
+      color: blueviolet;
+    }
 </style>
 
 <body onload="renderListClassrooms()">
@@ -72,19 +510,13 @@
         <div id="Design" class="tabcontent">
             <h3>Designs</h3>
             <div class="design-container">
-                <div class="paper-design-container">
-                    <img src="img/user-scenario.png" style="width: 700px; height: 800px;">
-                    <a class="download-button" href="img/user-scenario.png" download="scenario">
-                        Download
-                    </a>
-                </div>
                 <div class="figma-design-container">
-                    <img src="img/figma-design(l5).png" style="width: 1200px; height: 800px;">
+                    <img src="img/lab7-design.png" style="width: 1200px; height: 800px;">
                     <div class="figma-button">
-                        <a class="download-button" href="img/figma-design(l5).png" download="figmadesign">
+                        <a class="download-button" href="img/lab7-design.png" download="figmadesign">
                             Download
                         </a>
-                        <a class="redirect-button" href="https://www.figma.com/file/MRxx2ii2fB4PC7GRcKSdg7/Lab4?type=design&node-id=0%3A1&mode=design&t=cMQmfrVKOJTmbTzI-1">
+                        <a class="redirect-button" href="https://www.figma.com/file/O4rxknqtqJytct6LnmjzE9/Project?type=design&node-id=0%3A1&mode=design&t=n4ELRBmIKYDC4EAQ-1">
                             To Figma
                         </a>
                     </div>
@@ -95,65 +527,523 @@
         <!-- Implement Tab Content -->
         <div id="Implement" class="tabcontent">
             
-            <header>
-                <h1>Bus Ticket Booking Website</h1>
-            </header>
-            
-              <main>
-                <div class="search-bar">
-                  <input list="cities" placeholder="Điểm đi">
-                  <datalist id="cities">
-                    <option value="Hồ Chí Minh">
-                    <option value="Hà Nội">
-                    <option value="Nha Trang">
-                    <option value="Vũng Tàu">
-                    <option value="Đà Nẵng">
-                    <option value="Bạc Liêu">
-                  </datalist>
-                  <input list="cities" placeholder="Điểm đến">
-                  <datalist id="cities">
-                    <option value="Hồ Chí Minh">
-                    <option value="Hà Nội">
-                    <option value="Nha Trang">
-                    <option value="Vũng Tàu">
-                    <option value="Đà Nẵng">
-                    <option value="Bạc Liêu">
-                  </datalist>
-                  <input placeholder="Chọn ngày khởi hành" class="textbox-n" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"/>
-                  <input type="number" placeholder="Nhập số lượng vé">
-                  <button class="booking-button" type="submit">Tìm chuyến xe</button>
+          <div class="banner">
+            <img src="static/img/banner.png" alt="banner">
+            </div>
+            <div class="header">
+                <div class="header-sub">
+                    <div class="logo">
+                        <a href="index.html"><img src="static/img/logo.png" alt="Logo Page"></a>
+                    </div>
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="Bạn tìm gì...">
+                        <button class="search-button">
+                        <i class="fas fa-search" style="color: black; font-size: 15px;"></i>
+                        </button>
+                        <div class="tag">
+                                <p class="tag-popular"><a href="#">Từ khóa phổ biến</a></p>
+                                <p class="tag-list"><a href="#">Laptop</a></p>
+                                <p class="tag-list"><a href="#">Điện Thoại</a></p>
+                                <p class="tag-list"><a href="#">Linh Kiện</a></p>
+                                <p class="tag-list"><a href="#">Tivi</a></p>
+                        </div>  
+                    </div>
                 </div>
-            
-                <div class="results">
-                  <h2>Kết quả tìm kiếm</h2>
-                  <div class="result">
-                    <img class="bus-image" src="./img/mailinh-bus.jpg" alt="Bus image">
-                    <div class="details">
-                      <h3>Nhà xe Mai Linh</h3>
-                      <p>Khởi hành lúc: 8:00 sáng</p>
-                      <p>Thời gian di chuyển: 6 tiếng</p>
-                      <p>Giá vé: 200.000đ</p>
-                      <button class="booking-button" type="button">Đặt vé</button>
+              </div>
+        
+              
+              <div class="topnav">
+                <a href="index.html" class="page-activate" ><i class="fas fa-home"></i>Home</a>
+                <a href="news.html"><i class="fas fa-book"></i> Tin Tức</a>
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i> Giỏ hàng</a>
+                <a href="support.html"><i class="fa-solid fa-question"></i> Hỗ trợ</a>
+                <a href="contact.html"><i class="fas fa-phone"></i> Liên Hệ</a>
+                <div class="account" >
+                  <a href="login.html" id="username-login" class="login-user"><i class="fa-solid fa-user"></i> Đăng Nhập</a>
+                  <a href="register.html" id="username-logout" class="register-user"><i class="fa-solid fa-users"></i> Đăng Ký</a>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="leftcolumn">
+                  <div class="card">
+                    <div class="slideshow-container">
+        
+                      <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="static/img/slide1.png" style="width:100%">
+                      </div>
+                      
+                      <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="static/img/slide2.png" style="width:100%">
+                      </div>
+                      
+                      <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="static/img/slide3.png" style="width:100%">
+                      </div>
+                      
+                      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                      
+                      </div>
+                      <br>
+                      
+                      <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span> 
+                        <span class="dot" onclick="currentSlide(2)"></span> 
+                        <span class="dot" onclick="currentSlide(3)"></span> 
+                      </div>
+                  </div>
+                  
+                  <div class="banner-mid"><img src="static/img/baner2.png" alt=""></div>
+                  <div class="card">
+                    <div class="product">
+                      <div class="product-item">
+                        <div class="product-item-banner"><img src="static/img/baner3.png" alt=""></div>
+                        <div class="product-title">
+                          <h2> ĐIỆN THOẠI NỔI BẬT NHẤT <i class="fa-solid fa-fire"></i></h2>
+                        </div>
+                        <div class="product-content-items">
+                          <div class="product-content-item">
+                            <img src="static/img/sp1.jpg" alt="">
+                            <div class="product-content-item-text">
+                              <li>Đặt trước đến 25/03</li>
+                              <li>ViVo V23</li>
+                              <li>onl giá rẻ</li>
+                              <li><a href=""> 32.990.000 <sup>đ</sup></a><span> -6%</span></li>
+                              <li>29.999.000 <sup>đ</sup></li>
+                              <li>quà 400.000 <sup>đ</sup></li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                              </li>
+                            </div>
+                          </div>
+                          <div class="product-content-item">
+                            <img src="static/img/sp2.jpg" alt="">
+                            <div class="product-content-item-text">
+                              <li>Đặt trước đến 25/03</li>
+                              <li>Samsung Z-flip</li>
+                              <li>onl giá rẻ</li>
+                              <li><a href=""> 30.990.000 <sup>đ</sup></a><span> -6%</span></li>
+                              <li>19.999.000 <sup>đ</sup></li>
+                              <li>quà 400.000 <sup>đ</sup></li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                              </li>
+                            </div>
+                          </div>
+                          <div class="product-content-item">
+                            <img src="static/img/sp3.jpg" alt="">
+                            <div class="product-content-item-text">
+                              <li>Đặt trước đến 25/03</li>
+                              <li>Iphone 12 Pro Max</li>
+                              <li>onl giá rẻ</li>
+                              <li><a href=""> 32.990.000 <sup>đ</sup></a><span> -6%</span></li>
+                              <li>29.999.000 <sup>đ</sup></li>
+                              <li>quà 400.000 <sup>đ</sup></li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                              </li>
+                            </div>
+                          </div>
+                          <div class="product-content-item">
+                            <img src="static/img/sp4.jpg" alt="">
+                            <div class="product-content-item-text">
+                              <li>Đặt trước đến 25/03</li>
+                              <li>Zenzo Z7</li>
+                              <li>onl giá rẻ</li>
+                              <li><a href=""> 10.000.000 <sup>đ</sup></a><span> -6%</span></li>
+                              <li> 9.990.000 <sup>đ</sup></li>
+                              <li>quà 400.000 <sup>đ</sup></li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                              </li>
+                            </div>
+                          </div>
+                          <div class="product-content-item">
+                            <img src="static/img/sp5.jpg" alt="">
+                            <div class="product-content-item-text">
+                              <li>Đặt trước đến 25/03</li>
+                              <li>OPPO P75</li>
+                              <li>onl giá rẻ</li>
+                              <li><a href=""> 12.000.000 <sup>đ</sup></a><span> -6%</span></li>
+                              <li>10.000.000 <sup>đ</sup></li>
+                              <li>quà 400.000 <sup>đ</sup></li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                              </li>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="result">
-                    <img class="bus-image" src="./img/phuongtrang-bus.jpg" alt="Bus image">
-                    <div class="details">
-                      <h3>Nhà xe Phương Trang</h3>
-                      <p>Khởi hành lúc: 9:00 sáng</p>
-                      <p>Thời gian di chuyển: 5 tiếng 30 phút</p>
-                      <p>Giá vé: 220.000đ</p>
-                      <button class="booking-button" type="button">Đặt vé</button>
+                  <div class="card">
+                    <div class="product-mobile">
+                      <div class="product-item-mobile">
+                        <div class="product-mobile">
+                          <h2>Các sản phẩm Hot<i class="fa-brands fa-hotjar"></i></h2>
+                        </div>
+                        <div class="product-content-items">
+                          <div class="product-content-item mobile">
+                            <img src="static/img/dienthoai1.jpg" alt="">
+                            <div class="product-content-item-text ">
+                              <li>Đặt trước đến 25/03</li>
+                              <li>OPPO</li>
+                              <li>onl giá rẻ</li>
+                              <li><a href=""> 32990.0000 <sup>đ</sup></a><span> -6%</span></li>
+                              <li>19999.0000 <sup>đ</sup></li>
+                              <li>quà 400000 <sup>đ</sup></li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                              </li>
+                            </div>
+                          </div>
+                          <div class="product-content-item mobile">
+                            <img src="static/img/dienthoai2.jpg" alt="">
+                            <div class="product-content-item-text ">
+                              <li>Đặt trước đến 25/03</li>
+                              <li>OPPO</li>
+                              <li>onl giá rẻ</li>
+                              <li><a href=""> 32990.0000 <sup>đ</sup></a><span> -6%</span></li>
+                              <li>19999.0000 <sup>đ</sup></li>
+                              <li>quà 400000 <sup>đ</sup></li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                              </li>
+                            </div>
+                          </div>
+                          <div class="product-content-item mobile">
+                            <img src="static/img/dienthoai3.jpg" alt="">
+                            <div class="product-content-item-text ">
+                              <li>Đặt trước đến 25/03</li>
+                              <li>Vivo V9</li>
+                              <li>onl giá rẻ</li>
+                              <li><a href=""> 15.000.000 <sup>đ</sup></a><span> -10%</span></li>
+                              <li> 12.990.000 <sup>đ</sup></li>
+                              <li>quà 400.000 <sup>đ</sup></li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                              </li>
+                            </div>
+                          </div>
+                          <div class="product-content-item mobile">
+                            <img src="static/img/dienthoai4.jpg" alt="">
+                            <div class="product-content-item-text ">
+                              <li>Đặt trước đến 25/03</li>
+                              <li>Samsung A92</li>
+                              <li>onl giá rẻ</li>
+                              <li><a href=""> 5.000.000 <sup>đ</sup></a><span> -6%</span></li>
+                              <li>3.990.000 <sup>đ</sup></li>
+                              <li>quà 400.000 <sup>đ</sup></li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                              </li>
+                            </div>
+                          </div>
+                          <div class="product-content-item mobile">
+                            <img src="static/img/dienthoai5.jpg" alt="">
+                            <div class="product-content-item-text ">
+                              <li>Đặt trước đến 25/03</li>
+                              <li>OPPO</li>
+                              <li>onl giá rẻ</li>
+                              <li><a href=""> 32990.0000 <sup>đ</sup></a><span> -6%</span></li>
+                              <li>19999.0000 <sup>đ</sup></li>
+                              <li>quà 400000 <sup>đ</sup></li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                              </li>
+                            </div>
+                          </div>
+                        </div>
+        
+                        <div class="product-content-items" style="padding-top: 25px;">
+                          <div class="product-content-item mobile">
+                            <img src="static/img/laptop3.jpg" alt="">
+                            <div class="product-content-item-text ">
+                              <li>Đặt trước đến 25/03</li>
+                              <li>
+                                Laptop Asus TUF</li>
+                              <li>onl giá rẻ</li>
+                              <li><a href=""> 20.990.000 <sup>đ</sup></a><span> -6%</span></li>
+                              <li>19.999.000 <sup>đ</sup></li>
+                              <li>quà 400.000 <sup>đ</sup></li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                              </li>
+                            </div>
+                          </div>
+                          <div class="product-content-item mobile">
+                            <img src="static/img/laptop.jpg" alt="">
+                            <div class="product-content-item-text ">
+                              <li>Đặt trước đến 25/03</li>
+                              <li>Laptop dell inspiron</li>
+                              <li>onl giá rẻ</li>
+                              <li><a href=""> 32.990.000 <sup>đ</sup></a><span> -6%</span></li>
+                              <li> 30.000.000 <sup>đ</sup></li>
+                              <li>quà 400.000 <sup>đ</sup></li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                              </li>
+                            </div>
+                          </div>
+                          <div class="product-content-item mobile">
+                            <img src="static/img/laptop10.jpg" alt="">
+                            <div class="product-content-item-text ">
+                              <li>Đặt trước đến 25/03</li>
+                              <li>
+                                Laptop Intel NUC M15 Kit i7</li>
+                              <li>onl giá rẻ</li>
+                              <li><a href=""> 32.990.000 <sup>đ</sup></a><span> -30%</span></li>
+                              <li>19.999.000 <sup>đ</sup></li>
+                              <li>quà 400000 <sup>đ</sup></li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                              </li>
+                            </div>
+                          </div>
+                          <div class="product-content-item mobile">
+                            <img src="static/img/laptop13.jpg" alt="">
+                            <div class="product-content-item-text ">
+                              <li>Đặt trước đến 25/03</li>
+                              <li>Lenovo legion 5</li>
+                              <li>onl giá rẻ</li>
+                              <li><a href=""> 32.990.000 <sup>đ</sup></a><span> -6%</span></li>
+                              <li> 19.999.000 <sup>đ</sup></li>
+                              <li>quà 400.000 <sup>đ</sup></li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                              </li>
+                            </div>
+                          </div>
+                          <div class="product-content-item mobile">
+                            <img src="static/img/laptop5.jpg" alt="">
+                            <div class="product-content-item-text ">
+                              <li>Đặt trước đến 25/03</li>
+                              <li>
+                                Lenovo Gaming Legion 5 15ITH6 i7 11800H</li>
+                              <li>onl giá rẻ</li>
+                              <li><a href=""> 10.000.000 <sup>đ</sup></a><span> -6%</span></li>
+                              <li> 9.999.000 <sup>đ</sup></li>
+                              <li>quà 400.000 <sup>đ</sup></li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                              </li>
+                            </div>
+                          </div>
+                        </div>
+        
+                      </div>
                     </div>
                   </div>
                 </div>
-            
-              </main>
-            
-              <footer>
-                <p>Copyright © 2023 Bus Ticket Booking Website</p>
-              </footer>
-            
+                
+                <div class="rightcolumn">
+                  <div class="card" style="background-color: #7fff0091;">
+                    <div class="title-cate">
+                      <h3><i class="fa-solid fa-bars"></i> DANH MỤC</h3>
+                    </div>
+                    <div class="cate">
+                      <ul class="ul-cate">
+                        <li class="cate-item" style="margin-top: -16px;"><i class="fa-solid fa-square-plus"></i> <a href="computer.html">Máy Tính</a></li>
+                        <li class="cate-item"><i class="fa-solid fa-square-plus"></i> <a href="fridge.html">Tủ Lạnh</a></li>
+                        <li class="cate-item"><i class="fa-solid fa-square-plus"></i> <a href="#">Điều Hòa</a></li>
+                        <li class="cate-item"><i class="fa-solid fa-square-plus"></i> <a href="laptop.html">Laptop</a></li>
+                        <li class="cate-item"><i class="fa-solid fa-square-plus"></i> <a href="washingmachine.html">Máy Giặt</a></li> 
+                        <li class="cate-item" ><i class="fa-solid fa-square-plus"></i> <a href="accessory.html">Linh Kiện</a></li>
+                      </ul>
+                    </div>
+                  </div>
+        
+        
+                  <div class="card" id="popular-scroll">
+                    <div class="title-cate">
+                      <h3><i class="fa-solid fa-star"></i> NỔI BẬT</h3>
+                    </div>
+                    <div class="popular-item">
+                      <img src="static/img/dienthoai.jpg" width="75" height="75" alt="">
+                      <div class="star-order">
+                      <div class="item-right-conten">
+                        <div class="item-right-conten-ten popular-right">Iphone SE 2022</div>
+                        <div class="item-right-conten-gia price-right">Giá: 28.990.000 đ</div>
+                        <button class="order-now">Mua Ngay</button>
+                      </div>
+                      <div class="item-left-conten">
+                        <i class="fas fa-star left-star"></i>
+                        <i class="fas fa-star left-star"></i>
+                        <i class="fas fa-star left-star"></i>
+                        <i class="fas fa-star left-star"></i>
+                        <i class="fas fa-star left-star"></i>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="popular-item">
+                      <img src="static/img/dongho.jpg" width="75" height="75" alt="">
+                      <div class="star-order">
+                        <div class="item-right-conten">
+                          <div class="item-right-conten-ten popular-right">Apple Watch 2022</div>
+                          <div class="item-right-conten-gia price-right">Giá: 19.000.000 đ</div>
+                          <button class="order-now">Mua Ngay</button>
+                        </div>
+                        <div class="item-left-conten">
+                          <i class="fas fa-star left-star"></i>
+                          <i class="fas fa-star left-star"></i>
+                          <i class="fas fa-star left-star"></i>
+                          <i class="fas fa-star left-star"></i>
+                          <i class="fas fa-star left-star"></i>
+                      </div>
+                      </div>
+                    </div>
+                    <div class="popular-item">
+                      <img src="static/img/maytinh.jpg" width="75" height="75" alt="">
+                      <div class="star-order">
+                        <div class="item-right-conten">
+                          <div class="item-right-conten-ten popular-right">Laptop Acer Nitro 5</div>
+                          <div class="item-right-conten-gia price-right">Giá: 32.990.000 đ</div>
+                          <button class="order-now">Mua Ngay</button>
+                        </div>
+                        <div class="item-left-conten">
+                          <i class="fas fa-star left-star"></i>
+                          <i class="fas fa-star left-star"></i>
+                          <i class="fas fa-star left-star"></i>
+                          <i class="fas fa-star left-star"></i>
+                          <i class="fas fa-star left-star"></i>
+                      </div>
+                      </div>           
+                    </div>
+                    <div class="popular-item">
+                      <img src="static/img/tainghe.jpg" width="75" height="75" alt="">
+                      <div class="star-order">
+                        <div class="item-right-conten">
+                          <div class="item-right-conten-ten popular-right">Airpods 3 Pro</div>
+                          <div class="item-right-conten-gia price-right">Giá: 5.590.000 đ</div>
+                          <button class="order-now">Mua Ngay</button>
+                        </div>
+                        <div class="item-left-conten">
+                          <i class="fas fa-star left-star"></i>
+                          <i class="fas fa-star left-star"></i>
+                          <i class="fas fa-star left-star"></i>
+                          <i class="fas fa-star left-star"></i>
+                          <i class="fas fa-star left-star"></i>
+                      </div>
+                      </div>           
+                    </div>
+                    <div class="popular-item">
+                      <img src="static/img/xacduphong.jpg" width="75" height="75" alt="">
+                      <div class="star-order">
+                        <div class="item-right-conten">
+                          <div class="item-right-conten-ten popular-right">Anker 20000mah</div>
+                          <div class="item-right-conten-gia price-right">Giá: 3.000.000 đ</div>
+                          <button class="order-now">Mua Ngay</button>
+                        </div>
+                        <div class="item-left-conten">
+                          <i class="fas fa-star left-star"></i>
+                          <i class="fas fa-star left-star"></i>
+                          <i class="fas fa-star left-star"></i>
+                          <i class="fas fa-star left-star"></i>
+                          <i class="fas fa-star left-star"></i>
+                      </div>
+                      </div>           
+                    </div>
+                  </div>
+        
+                  <div class="card">
+                    <div class="title-cate">
+                      <h3><i class="fa-solid fa-star"></i> TIN TỨC CÔNG NGHỆ</h3>
+                    </div>
+                    <div class="tintuc-column-index">
+                      <div class="tintuc-column2-item">
+                        <div><img style="width: 100%;" src="https://cdn.tgdd.vn/Files/2021/02/14/1327533/iphone-se-2021-2-camera_800x450.png" alt=""></div>
+                        <a href="#" class="title-sp">Giá bán của chiếc iphone rẻ nhất từ trước tới nay dùng chíp A13</a>
+                      </div>
+                      <div class="tintuc-column2-item">
+                        <a href="#">Siêu phẩm iPhone SE 2022 lộ diện - Cấu hình không thua iPhone 13 mà giá có 13 triệu* - Đây là những điểm HOT nhất</a>
+                      </div>
+                      <div class="tintuc-column2-item">
+                        <a href="#">iPhone SE 3 (iPhone SE 2022) có gì mới: Giá từ 12.9 triệu*, chip Apple A15 cùng kết nối 5G xịn sò, thiết kế nhỏ gọn (đã ra mắt)</a>
+                      </div>
+                      <div class="tintuc-column2-item">
+                        <a href="#">iPhone 13 màu nào đẹp nhất? Có tới 6 sắc màu đẹp mãn nhãn đặc biệt là màu 'trà xanh' dự là sẽ HOT lắm đấy!</a>
+                      </div>
+                      <div class="tintuc-column2-item">
+                        <a href="#">Săn ngay smartphone có chip Snapdragon rẻ nhất đang ưu đãi ngon trong tháng 3, giá chưa tới 5 triệu đồng</a>
+                      </div>
+                      <div class="tintuc-column2-item">
+                        <a href="#">Cuối tuần ưu đãi ngon cho Redmi 9A - Smartphone Xiaomi rẻ nhất có pin 5.000 mAh, chỉ có vài ngày mau mau sắm nha</a>
+                      </div>
+                      <div class="tintuc-column2-item">
+                        <a href="#">Tuần qua công nghệ có gì HOT 12/3: Cận cảnh iPhone 13 và iPhone 13 Pro màu Xanh lá, dòng Xiaomi 12 quốc tế lộ giá chi tiết</div>
+                      </div>
+                      <div class="tintuc-column2-item" style="border: none;">
+                        <a href="#">Xiaomi POCO F4 và POCO F4 Pro sắp ra mắt thị trường toàn cầu, chạy bộ vi xử lý xịn sò và viên pin khá 4.400mAh</a>
+                      </div>
+                  </div>
+                </div>
+        
+                
+              </div>
         </div>
     </div>
 
